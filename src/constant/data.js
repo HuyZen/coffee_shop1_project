@@ -1,0 +1,108 @@
+import * as dataImg from './dataImg';
+
+export const mugs = [
+  {
+    id: 1,
+    img: dataImg.FeaturedMug1,
+    priceCurrent: 39,
+    priceSale: 29,
+    name: 'Premium Lagom Mug',
+    mug: 'Featured Mugs',
+    type: 'On Sale',
+  },
+  {
+    id: 2,
+    img: dataImg.FeaturedMug2,
+    priceCurrent: 27,
+    priceSale: 27,
+    name: 'Black Designers Mug',
+    mug: 'Featured Mugs',
+    type: 'None',
+  },
+  {
+    id: 3,
+    img: dataImg.MoreMug1,
+    priceCurrent: 32,
+    priceSale: 32,
+    name: 'Red Love Cup',
+    mug: 'Featured Mugs',
+    type: 'None',
+  },
+  {
+    id: 4,
+    img: dataImg.MoreMug2,
+    priceCurrent: 32,
+    priceSale: 26,
+    name: 'Black Designers Mug',
+    mug: 'Normal',
+    type: 'On Sale',
+  },
+  {
+    id: 5,
+    img: dataImg.MoreMug3,
+    priceCurrent: 22,
+    priceSale: 22,
+    name: 'B&W Essentials Mug',
+    mug: 'Normal',
+    type: 'None',
+  },
+  {
+    id: 6,
+    img: dataImg.MoreMug4,
+    priceCurrent: 24,
+    priceSale: 24,
+    name: 'Winter Style Mug',
+    mug: 'Normal',
+    type: 'None',
+  },
+  {
+    id: 7,
+    img: dataImg.MoreMug5,
+    priceCurrent: 24,
+    priceSale: 18,
+    name: 'Ceramic Tea',
+    mug: 'Normal',
+    type: 'On Sale',
+  },
+  {
+    id: 8,
+    img: dataImg.MoreMug6,
+    priceCurrent: 18,
+    priceSale: 12,
+    name: 'No Handle Bar Cup',
+    mug: 'Normal',
+    type: 'On Sale',
+  },
+  {
+    id: 9,
+    img: dataImg.MoreMug7,
+    priceCurrent: 40,
+    priceSale: 32,
+    name: 'Espresso Cup by Mugs.co',
+    mug: 'Normal',
+    type: 'None',
+  },
+  {
+    id: 10,
+    img: dataImg.MoreMug8,
+    priceCurrent: 35,
+    priceSale: 29,
+    name: 'Lagom Mug',
+    mug: 'Normal',
+    type: 'On Sale',
+  },
+  {
+    id: 11,
+    img: dataImg.MoreMug9,
+    priceCurrent: 16,
+    priceSale: 16,
+    name: 'Summer Designer Cup',
+    mug: 'Normal',
+    type: 'None',
+  },
+];
+
+export const coffee = [
+
+]
+

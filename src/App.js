@@ -1,8 +1,5 @@
 import './App.css';
-import Content from './components/Content';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Slider from './components/Slider';
+import {Header, Slider, Content, Footer} from '../src/container/index.js'
 
 
 function App() {
