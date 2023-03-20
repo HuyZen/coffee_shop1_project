@@ -103,6 +103,89 @@ export const mugs = [
 ];
 
 export const coffee = [
+  {
+    id: 1,
+    name: 'Cappuccino',
+    desc: 'Espresso and equal parts steamed milk and foam',
+    price: 5,
+  },
+  {
+    id: 2,
+    name: 'Cafe Latte',
+    desc: 'Espresso and steamed milk topped with creamy foam',
+    price: 9,
+  },
+  {
+    id: 3,
+    name: 'Americano',
+    desc: 'Hot water topped with a double or triple espresso',
+    price: 10,
+  },
+  {
+    id: 4,
+    name: 'Killer Bee',
+    desc: 'Our gourmet coffee topped with a double or triple espresso',
+    price: 8,
+  },
+  {
+    id: 5,
+    name: 'Espresso',
+    desc: 'Your choice of a double or triple espresso',
+    price: 12,
+  },
+  {
+    id: 6,
+    name: 'Macchiato',
+    desc: 'Espresso with a drop of steamed milk on top',
+    price: 9,
+  },
+  {
+    id: 7,
+    name: 'Vanilla Latte',
+    desc: 'Espresso, Vanilla and steamed milk',
+    price: 9,
+  }
+];
 
+export const coldBrew = [
+  {
+    id: 1,
+    name: 'On Tap',
+    desc: 'Featured single origin coffee (regular or decaf)',
+    price: 4.5,
+  },
+  {
+    id: 2,
+    name: 'On Nitro',
+    desc: 'Featured single origin or sweet tooth blend',
+    price: 9,
+  }
+]
+
+export const sodas = [
+  {
+    id: 1,
+    name: 'Cucumber Soda',
+    desc: 'Jasmine, anise seed, dill seed, fennel seed, lime',
+    price: 17,
+  },
+  {
+    id: 2,
+    name: 'Lemon lime soda',
+    desc: 'Cardamom, anise seed, dill seed',
+    price: 5,
+  },
+  {
+    id: 3,
+    name: 'Cream Soda',
+    desc: 'Vanilla bean-infused demerara sugar',
+    price: 3.5,
+  },
+  {
+    id: 4,
+    name: 'Blueberry Soda',
+    desc: 'Basil leaf, vanilla elderberry, lemon',
+    price: 4.5,
+  }
 ]
 

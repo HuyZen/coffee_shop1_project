@@ -4,7 +4,7 @@ import * as dataImg from '../../constant/dataImg';
 const LifestyleStories = () => {
   return (
     <>
-        <div className="col l-12 t-12 c-12 my-24">
+        <div className="col l-12 t-12 c-12 mt-24" id='story'>
             <div className="hz-subhead-line mb-12">
               <div className="hz-subhead-line_deco-line"></div>
               <div className="hz-subhead-line__label">BEHIND THE MUGS, LIFESTYLE STORIES</div>

@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior:  smooth;
+}
+
 /* hz as huyzen */
 .hz-topmenu-expanded {
   @apply absolute  z-10 w-full h-full bottom-0 py-24 pl-4 text-center bg-bg-coffee duration-500 left-0;
