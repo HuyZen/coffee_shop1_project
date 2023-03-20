@@ -7,7 +7,7 @@ const AboutUs = () => {
       <div className="col l-10 l-o-1 t-10 t-o-1 c-10 c-o-1" id='about'>
         <div className="row">
           <div className="col l-6 t-12 c-12">
-            <video autoPlay loop muted className='rounded-lg'>
+            <video autoPlay loop muted className='rounded-lg mb-5'>
               <source src={coffeeStoryVideo} type="video/mp4" />
             </video>
           </div>

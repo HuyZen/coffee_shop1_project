@@ -6,9 +6,9 @@ function Header(props) {
     { name: "Home", id: "#home" },
     { name: "About Us", id: "#about" },
     { name: "Menu", id: "#menu" },
+    { name: "Mugs", id: "#mugs" },
     { name: "Promotion", id: "#promotion" },
     { name: "Story", id: "#story" },
-    { name: "Contact", id: "#contact" },
   ];
 
   const [check, setCheck] = useState("false");
@@ -46,7 +46,7 @@ function Header(props) {
         <ul
           className={` ${
             check === true ? "left-0" : "left-[-100%]"
-          } md:hidden absolute z-50 w-full h-full top-0 right-0 bottom-0 py-24 pl-4 text-center bg-primary duration-500 `}
+          } md:hidden absolute z-50 w-full h-auto top-0 right-0 bottom-0 py-24 pl-4 text-center bg-primary duration-500 `}
         >
           {NavItem.map((item) => (
             <li

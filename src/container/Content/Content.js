@@ -8,12 +8,12 @@ function Content(props) {
       <div className="grid wide">
         <div className="row">
           <AboutUs />
+          <MenuCoffee />
           <FeatureMugs />
           <MoreMugs />
           <CoffeeMagazine />
           <Parallax />
           <LifestyleStories />
-          <MenuCoffee />
         </div>
       </div>
     </div>

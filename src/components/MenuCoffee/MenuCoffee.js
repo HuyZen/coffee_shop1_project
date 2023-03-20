@@ -27,7 +27,7 @@ const MenuCoffee = () => {
                 ) )}
             </div>
             <div className="col l-6">
-                <img src={CoffeeImage} alt="coffee-img" className='h-[420px] mt-12'></img>
+                <img src={CoffeeImage} alt="coffee-img" className='h-[420px] sld3:h-[300px] mt-12 mb-6'></img>
             </div>
             <div className="col l-3">
                 <h3 className='uppercase text-[32px]'>Cold Brew</h3>

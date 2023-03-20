@@ -5,7 +5,7 @@ const FeatureMugs = () => {
   return (
     <>
        
-        <div className="col l-10 l-o-1 t-10 t-o-1 c-10 c-o-1" id='menu'>
+        <div className="col l-10 l-o-1 t-10 t-o-1 c-10 c-o-1" id='mugs'>
             <div className="hz-subhead-line">
               <div className="hz-subhead-line_deco-line"></div>
               <div className="hz-subhead-line__label my-12">Featured Mugs</div>
