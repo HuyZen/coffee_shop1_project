@@ -1,5 +1,6 @@
 import React from 'react';
 import { mugs } from '../../constant/data';
+import { Link } from 'react-router-dom';
 
 const MoreMugs = () => {
   return (
@@ -14,12 +15,13 @@ const MoreMugs = () => {
               {
                 mugs.filter((item) => item.mug === 'Normal').map((item) => (
                   <div key={item.id} className="col l-4 t-6 c-12 mb-[120px]">
-                    <a href="#id">
+                    <div>
                       <div className="w-full h-full relative">
                         <img src={item.img} alt={item.name} className="hz-img__product" />
                         {item.type === 'On Sale' ? <div className="absolute hz-tag__on-sale">{item.type}</div> : null}
-                        <div className="absolute hz-button__buy-coffee">Add to Cart</div>
-
+                        <Link to={`/mug/${item.id}`}>
+                          <div className="absolute hz-button__buy-coffee">Explore Mug</div>
+                        </Link>
                         <div className="hz-mug-decs">
                           <div className="hz-mug-name">{item.name}</div>
                           <div className="hz-mug-price">
@@ -28,7 +30,7 @@ const MoreMugs = () => {
                           </div>
                         </div>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 ))
               }

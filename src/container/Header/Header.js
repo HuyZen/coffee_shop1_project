@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, {  useEffect, useState } from "react";
 import logo from "../../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   let NavItem = [
@@ -13,6 +14,11 @@ function Header(props) {
 
   const [check, setCheck] = useState("false");
 
+  const [quantity, setQuantity] = useState();
+  useEffect(() => {
+    
+  }, [quantity]);
+  
   const handleShowMenu = (e) => {
     setCheck((current) => !current);
   };
@@ -21,13 +27,15 @@ function Header(props) {
     <header className="bg-bg-coffee top-0 left-0 right-0 shadow-md">
       <nav className="flex justify-around items-center font-medium max-w-screen-xl mx-auto px-8">
         {/* Logo */}
-        <div className="z-10 basis-2/4 md:basis-1/4 md:flex md:justify-center">
-          <img
-            src={logo}
-            alt="LAGOM COFFEE"
-            className="logo md:cursor-pointer h-[95px] w-[120px] my-4"
-          />
-        </div>
+        <Link to='/' >
+          <div className="z-10 basis-2/4 md:basis-1/4 md:flex md:justify-center">
+            <img
+              src={logo}
+              alt="LAGOM COFFEE"
+              className="logo md:cursor-pointer h-[95px] w-[120px] my-4"
+            />
+          </div>
+        </Link>
 
         {/* NavLink */}
         <ul
@@ -59,13 +67,13 @@ function Header(props) {
         </ul>
 
         {/* Cart */}
-        <ul
+        <div
           className={`basis-1/4 md:basis-1/4 flex justify-end md:justify-center ml-16 leading-5 uppercase  md:text-text-color ${
             check === true ? "text-white hover:text-rim" : "text-text-color"
           } font-medium z-20 `}
         >
-          <li className="hz-top-menu-item">
-            <a href="#id" className="flex items-center">
+          <div className="hz-top-menu-item">
+            <button className="flex items-center">
               <i>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,11 +90,12 @@ function Header(props) {
                   />
                 </svg>
               </i>
-              <span className="mx-2">Cart</span>
-              <span className="hz-amount-circle bg-rim text-white">7</span>
-            </a>
-          </li>
-        </ul>
+              <span className="mx-2 uppercase">Cart</span>
+              <span className="hz-amount-circle bg-rim text-white">{quantity}</span>
+            </button>
+            
+          </div>
+        </div>
 
         {/* Button menu mobile */}
         <div
