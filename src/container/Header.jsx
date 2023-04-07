@@ -31,6 +31,8 @@ function Header(props) {
     setCheck((current) => !current);
   };
 
+
+
   return (
     <header className="bg-bg-coffee top-0 left-0 right-0 shadow-md">
       <nav className="flex justify-around items-center font-medium max-w-screen-xl mx-auto px-8">
@@ -62,11 +64,11 @@ function Header(props) {
         <ul
           className={` ${
             check === true ? 'left-0' : 'left-[-100%]'
-          } lg:hidden absolute z-50 w-full h-auto top-0 right-0 bottom-0 py-24 pl-4 text-center bg-primary duration-500 `}
+          } lg:hidden absolute z-50 w-full h-full top-0 right-0 bottom-0 py-24 pl-4 text-center bg-primary duration-500 `}
         >
           {NavItem.map((item) => (
             <li key={item.name} className="py-5 uppercase cursor-pointer text-white hover:text-rim">
-              <NavLink to={item.link}>{item.name}</NavLink>
+              <NavLink to={item.link} onClick={handleShowMenu}>{item.name}</NavLink>
             </li>
           ))}
         </ul>
