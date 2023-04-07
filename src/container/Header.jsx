@@ -66,7 +66,7 @@ function Header(props) {
         >
           {NavItem.map((item) => (
             <li key={item.name} className="py-5 uppercase cursor-pointer text-white hover:text-rim">
-              <a href={item.id}>{item.name}</a>
+              <NavLink to={item.link}>{item.name}</NavLink>
             </li>
           ))}
         </ul>
