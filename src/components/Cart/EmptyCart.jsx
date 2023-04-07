@@ -17,7 +17,7 @@ export const EmptyCart = () => {
             {/* <img src={images.sadGif} alt="sad" width={30} /> */}
           </div>
           <Link to="/products" className="col l-6 l-o-3 t-10 t-o-1 c-10 c-o-1 mb-[100px]">
-            <button className=" mt-5 bg-black w-[60%] md:w-[60%] sm:w-full text-white font-medium text-lg sm:text-base h-[58px] rounded">
+            <button className=" mt-5 uppercase bg-primary w-[60%] md:w-[60%] sm:w-full text-rim font-medium text-lg sm:text-base h-[58px] rounded">
               Continue Shopping
             </button>
           </Link>

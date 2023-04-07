@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { mugs } from '../constant/data';
 import { HiCheck } from "react-icons/hi2";
 import { useCartContext } from '../controller/cartContext.js';
@@ -72,11 +72,13 @@ const ProductDetails = () => {
                 </button>
               </div>
 
-              <button className="mt-5 flex items-center justify-center w-[50%] h-[40px] bg-primary font-semibold text-rim text-[16px] shadow-xl hover:translate-y-[-2px] hover:shadow-2xl rounded-sm text-center"
-                onClick={() => addToCart(detail, quantity)}
-              >
-                Add to Cart
-              </button>
+              <Link to='/cart'>
+                  <button className="mt-5 flex items-center justify-center w-[50%] h-[40px] bg-primary font-semibold text-rim text-[16px] shadow-xl hover:translate-y-[-2px] hover:shadow-2xl rounded-sm text-center"
+                    onClick={() => addToCart(detail, quantity)}
+                  >
+                    Add to Cart
+                  </button>
+              </Link>
 
               <div className="mt-9">
                 <div className="text-[28px] font-bold mb-10">Details</div>

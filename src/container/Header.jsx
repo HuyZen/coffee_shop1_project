@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../assets/images/logo.png';
 import { Link, NavLink } from 'react-router-dom';
+import { useCartContext } from '../controller/cartContext';
 
 function Header(props) {
   let NavItem = [
@@ -11,10 +12,20 @@ function Header(props) {
     { name: 'Story', link: '/story' },
   ];
 
+  const { cart } = useCartContext()
+
   const [check, setCheck] = useState('false');
 
   const [quantity, setQuantity] = useState('0');
-  useEffect(() => {}, [quantity]);
+  useEffect(() => {
+    if (cart) {
+      let total = 0;
+      cart.forEach((item) => {
+        total += item.quantity;
+      });
+      setQuantity(total);
+    }
+  }, [cart]);
 
   const handleShowMenu = (e) => {
     setCheck((current) => !current);

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-// import { faEnvelope, faPaperPlane, faPhoneVolume } from '@fortawesome/fontawesome-free-solid';
-// import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { HiEnvelope, HiMapPin, HiPaperAirplane, HiPhone } from 'react-icons/hi2';
-import { ToastContainer } from 'react-toastify';
 import * as dataImg from '../constant/dataImg';
 // import emailjs from '@emailjs/browser';
 import swal from 'sweetalert';
@@ -19,7 +16,7 @@ const Contact = () => {
     AOS.init();
     AOS.refresh();
   }, []);
-  const handleSucess = () => {
+  const handleSuccess = () => {
     if (name.length === 0 || email.length === 0 || message.length === 0) {
       swal('Sent error!', 'Please insert information', 'error');
     } else {
@@ -147,7 +144,7 @@ const Contact = () => {
                   <button
                     className="bg-black hz-button__send"
                     onClick={() => {
-                      handleSucess();
+                      handleSuccess();
                     }}
                   >
                     Send
@@ -213,7 +210,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
       <Footer />
     </div>
   );
