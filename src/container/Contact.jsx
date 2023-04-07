@@ -77,7 +77,7 @@ const Contact = () => {
                       href="mailto:nguyendangvu137@gmail.com"
                       className="text-sm text-second_color"
                     >
-                      nguyendangvu137@gmail.com
+                      zen12112000@gmail.com
                     </a>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ const Contact = () => {
                   <div className="pl-6 ">
                     <h4 className="text-lg font-medium">Phone</h4>
                     <a href="tel:+0379015026" className="text-sm text-second_color">
-                      0379015026
+                      0703651448
                     </a>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ const Contact = () => {
                     <h4 className="text-lg font-medium">Address</h4>
                     <p className="py-2 text-sm">Service clients 24/24</p>
                     <p className="text-sm text-second_color">
-                      97 Man Thien, Hiep Phu Ward, Thu Duc, Ho Chi Minh City
+                      39 Canary Wharf, London, UK
                     </p>
                   </div>
                 </div>

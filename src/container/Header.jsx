@@ -1,23 +1,21 @@
-import React, {  useEffect, useState } from "react";
-import logo from "../assets/images/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import logo from '../assets/images/logo.png';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header(props) {
   let NavItem = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Products", link: "/products" },
-    { name: "Contact", link: "/contact" },
-    { name: "Story", link: "/story" },
+    { name: 'Home', link: '/' },
+    { name: 'About', link: '/about' },
+    { name: 'Products', link: '/products' },
+    { name: 'Contact', link: '/contact' },
+    { name: 'Story', link: '/story' },
   ];
 
-  const [check, setCheck] = useState("false");
+  const [check, setCheck] = useState('false');
 
   const [quantity, setQuantity] = useState('0');
-  useEffect(() => {
-    
-  }, [quantity]);
-  
+  useEffect(() => {}, [quantity]);
+
   const handleShowMenu = (e) => {
     setCheck((current) => !current);
   };
@@ -26,7 +24,7 @@ function Header(props) {
     <header className="bg-bg-coffee top-0 left-0 right-0 shadow-md">
       <nav className="flex justify-around items-center font-medium max-w-screen-xl mx-auto px-8">
         {/* Logo */}
-        <Link to='/' >
+        <Link to="/">
           <div className="z-10 basis-2/4 lg:basis-1/4 lg:flex lg:justify-center">
             <img
               src={logo}
@@ -39,40 +37,37 @@ function Header(props) {
         {/* NavLink */}
         <ul
           className={
-            "lg:basis-2/4 ml-[50px] basis-0 lg:flex hidden lg:items:center lg:justify-around lg:gap-8 uppercase text-base text-gray-500 font-medium"
+            'lg:basis-2/4 ml-[50px] basis-0 lg:flex hidden lg:items:center lg:justify-around lg:gap-8 uppercase text-base text-gray-500 font-medium'
           }
         >
           {NavItem.map((item) => (
-              <li key={item.name} className="hz-top-menu-item">
-                  <NavLink to={item.link}>{item.name}</NavLink>
-              </li>
+            <li key={item.name} className="hz-top-menu-item">
+              <NavLink to={item.link}>{item.name}</NavLink>
+            </li>
           ))}
         </ul>
 
         {/* Mobile Nav */}
         <ul
           className={` ${
-            check === true ? "left-0" : "left-[-100%]"
+            check === true ? 'left-0' : 'left-[-100%]'
           } lg:hidden absolute z-50 w-full h-auto top-0 right-0 bottom-0 py-24 pl-4 text-center bg-primary duration-500 `}
         >
           {NavItem.map((item) => (
-            <li
-              key={item.name}
-              className="py-5 uppercase cursor-pointer text-white hover:text-rim"
-            >
+            <li key={item.name} className="py-5 uppercase cursor-pointer text-white hover:text-rim">
               <a href={item.id}>{item.name}</a>
             </li>
           ))}
         </ul>
 
         {/* Cart */}
-        <Link to='/cart'
+        <div
           className={`basis-1/4 lg:basis-1/4 flex justify-end lg:justify-center ml-16 leading-5 uppercase  lg:text-text-color ${
-            check === true ? "text-white hover:text-rim" : "text-text-color"
+            check === true ? 'text-white hover:text-rim' : 'text-text-color'
           } font-medium z-20 `}
         >
           <div className="hz-top-menu-item">
-            <button className="flex items-center">
+            <NavLink to="/cart" className="flex items-center">
               <i>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -91,15 +86,14 @@ function Header(props) {
               </i>
               <span className="mx-2 uppercase">Cart</span>
               <span className="hz-amount-circle bg-rim text-white">{quantity}</span>
-            </button>
-            
+            </NavLink>
           </div>
-        </Link>
+        </div>
 
         {/* Button menu mobile */}
         <div
           className={`basis-1/4 lg:hidden ${
-            check === true ? "text-white" : "text-text-color"
+            check === true ? 'text-white' : 'text-text-color'
           } cursor-pointer flex justify-center z-50`}
           onClick={handleShowMenu}
         >
@@ -116,8 +110,8 @@ function Header(props) {
               strokeLinejoin="round"
               d={
                 check === true
-                  ? "M6 18L18 6M6 6l12 12 "
-                  : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  ? 'M6 18L18 6M6 6l12 12 '
+                  : 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
               }
             />
           </svg>

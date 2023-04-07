@@ -7,7 +7,7 @@ const Cart = () => {
     
     return (
         <div>
-            <EmptyCart />
+            <CartList />
             {/* {
                 cart.length === 0 && <EmptyCart />
             }

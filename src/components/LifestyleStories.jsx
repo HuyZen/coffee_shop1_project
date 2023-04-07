@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as dataImg from '../constant/dataImg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const LifestyleStories = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
-        <div className="col l-12 t-12 c-12 mt-24" id='story'>
+        <div className="col l-12 t-12 c-12 mt-24" data-aos="fade-up-left" data-aos-duration="1000">
             <div className="hz-subhead-line mb-12">
               <div className="hz-subhead-line_deco-line"></div>
               <div className="hz-subhead-line__label">BEHIND THE MUGS, LIFESTYLE STORIES</div>

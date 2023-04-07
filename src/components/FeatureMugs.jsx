@@ -13,7 +13,7 @@ const FeatureMugs = () => {
     <>
       <div
         className="col l-10 l-o-1 t-10 t-o-1 c-10 c-o-1"
-        data-aos="fade-up-right"
+        data-aos="fade-down-left"
         data-aos-duration="700"
       >
         <div className="hz-subhead-line">
