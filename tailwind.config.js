@@ -26,9 +26,13 @@ module.exports = {
         Karla: ['Karla', 'sans-serif']
       },
       screens: {
-        'sld': {'max': '1120px'},
-        'sld2': {'max': '800px'},
-        'sld3': {'max': '610px'},
+        sm: { min: "0px", max: "767px" },
+        // => @media (min-width: 640px and max-width: 767px) { ... }
+
+        md: { min: "768px", max: "1023px" },
+        // => @media (min-width: 768px and max-width: 1023px) { ... }
+
+        lg: { min: "1024px" },
         
       }
     },

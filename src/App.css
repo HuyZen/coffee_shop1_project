@@ -9,13 +9,17 @@ html {
 }
 
 /* hz as huyzen */
+.active{
+  @apply after:lg:bg-primary after:lg:w-full after:lg:absolute text-text-color after:lg:h-0.5 after:lg:bottom-0.5 after:lg:left-0
+}
+
 .hz-topmenu-expanded {
   @apply absolute  z-10 w-full h-full bottom-0 py-24 pl-4 text-center bg-bg-coffee duration-500 left-0;
 }
 
 .hz-top-menu-item {
-  @apply cursor-pointer py-1  hover:text-text-color relative after:md:absolute after:md:bottom-0.5 after:md:left-0 after:md:bg-primary
-    after:md:h-0.5 after:md:w-0 hover:after:md:w-full after:md:opacity-0 hover:after:md:opacity-100 after:md:transition-all after:md:ease-in-out after:md:duration-300;
+  @apply cursor-pointer py-1  hover:text-text-color relative after:lg:absolute after:lg:bottom-0.5 after:lg:left-0 after:lg:bg-primary
+    after:lg:h-0.5 after:lg:w-0 hover:after:lg:w-full after:lg:opacity-0 hover:after:lg:opacity-100 after:lg:transition-all after:lg:ease-in-out after:lg:duration-300;
 }
 
 .hz-icon {
@@ -48,7 +52,7 @@ html {
 }
 
 .hz-tag__on-sale {
-    @apply cursor-context-menu bg-[#3C6255] py-2 px-4 top-4 right-4 text-center font-semibold text-rim text-[14px] shadow-md rounded-sm;
+    @apply cursor-context-menu bg-[#3C6255] py-2 px-4 top-4 right-4 text-center font-semibold text-rim text-[14px] shadow-lg rounded-sm;
 }
 
 .hz-mug-decs {
@@ -85,6 +89,26 @@ html {
 
 .hz-footer-item {
     @apply text-xs pb-2 text-gray-500 hover:text-coffee-text-brown-400;
+}
+
+.hz-title{
+  @apply my-20 text-xl sm:text-center sm:my-10
+}
+
+.hz-read-full-story {
+  @apply text-coffee-text-brown-400 hover:text-coffee-text-brown-600 cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:bg-coffee-text-brown-100 hover:after:bg-coffee-text-brown-200 after:h-0.5 after:w-full inline-block after:md:transition-all after:md:ease-in-out after:md:duration-300;
+}
+
+.hz-input{
+  @apply w-[60%] md:w-[80%] sm:w-full px-4 py-3 border border-solid border-slate-500 focus:outline-black rounded;
+}
+
+.hz-label{
+  @apply text-sm absolute top-[-10px] md:left-12 left-[110px] sm:left-4 text-black bg-white px-2
+}
+
+.hz-button__send{
+  @apply w-[60%] md:w-[80%] sm:w-full text-white font-medium text-lg sm:text-base h-[58px] rounded
 }
 
 
@@ -684,3 +708,5 @@ html {
     margin-left: 91.66667%;
   }
 }
+
+

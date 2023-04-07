@@ -1,7 +1,14 @@
-import React from 'react';
-import coffeeStoryVideo from '../../assets/videos/video.mp4';
+import React, { useEffect } from 'react';
+import coffeeStoryVideo from '../assets/videos/video.mp4';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
       <div className="col l-10 l-o-1 t-10 t-o-1 c-10 c-o-1" id='about'>
@@ -22,12 +29,13 @@ const AboutUs = () => {
                 the coffee. To properly discover the flavours, it is best to drink the coffee this
                 way. Everyone has their favourite brewing method.
               </div>
-              <div
-                className="story-footer text-coffee-text-brown-400 hover:text-coffee-text-brown-600 cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:bg-coffee-text-brown-100 hover:after:bg-coffee-text-brown-200
-                            after:h-0.5 after:w-full after:md:transition-all after:md:ease-in-out after:md:duration-300;"
-              >
-                Read the full story
-              </div>
+              <Link role='link' to='/story'>
+                <div
+                  className="hz-read-full-story"
+                >
+                  Read the full story
+                </div>
+              </Link>
             </div>
           </div>
         </div>

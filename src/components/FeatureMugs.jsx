@@ -1,11 +1,21 @@
-import React from 'react';
-import { mugs } from '../../constant/data';
+import React, { useEffect } from 'react';
+import { mugs } from '../constant/data';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const FeatureMugs = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
-      <div className="col l-10 l-o-1 t-10 t-o-1 c-10 c-o-1" id="mugs">
+      <div
+        className="col l-10 l-o-1 t-10 t-o-1 c-10 c-o-1"
+        data-aos="fade-up-right"
+        data-aos-duration="700"
+      >
         <div className="hz-subhead-line">
           <div className="hz-subhead-line_deco-line"></div>
           <div className="hz-subhead-line__label my-12">Featured Mugs</div>
@@ -47,6 +57,12 @@ const FeatureMugs = () => {
               </div>
             ))}
         </div>
+
+        <Link className="flex flex-row items-center justify-center mt-5 mb-[100px]" to='/products'>
+          <div className="hz-read-full-story text-xl">
+            See all our products
+          </div>
+        </Link>
       </div>
     </>
   );

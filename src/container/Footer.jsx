@@ -1,5 +1,5 @@
 import React from 'react';
-import QrCode from '../../assets/images/qr_code.png'
+import QrCode from '../assets/images/qr_code.png'
 
 function Footer(props) {
   return (
@@ -95,7 +95,7 @@ function Footer(props) {
                       <span className="font-semibold">Location:</span>
                     </a>
                     <p className="mt-2">
-                      82- 84, Bui Thi Xuan st., Ben Thanh Ward, District 1, HCMCity
+                      Canary Wharf, London, United Kingdom
                     </p>
                   </li>
                 </ul>

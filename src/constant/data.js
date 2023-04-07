@@ -100,6 +100,34 @@ export const mugs = [
     mug: 'Normal',
     type: 'None',
   },
+  {
+    id: 12,
+    img: dataImg.MoreMug10,
+    priceCurrent: 29,
+    priceSale: 29,
+    name: 'White Ceramic',
+    mug: 'Normal',
+    type: 'None',
+  },
+  {
+    id: 13,
+    img: dataImg.MoreMug11,
+    priceCurrent: 39,
+    priceSale: 39,
+    name: 'Aroma Art Coffee Mug',
+    mug: 'Featured Mugs',
+    type: 'None',
+  },
+  {
+    id: 14,
+    img: dataImg.MoreMug12,
+    priceCurrent: 99,
+    priceSale: 79,
+    name: 'Blue Premium Mug',
+    mug: 'Featured Mugs',
+    type: 'On Sale',
+  },
+
 ];
 
 export const coffee = [

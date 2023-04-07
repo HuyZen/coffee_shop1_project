@@ -1,5 +1,5 @@
 import React from 'react';
-import * as dataImg from '../../constant/dataImg';
+import * as dataImg from '../constant/dataImg';
 
 const LifestyleStories = () => {
   return (

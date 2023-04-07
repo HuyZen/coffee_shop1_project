@@ -1,9 +1,9 @@
 
-const cartReducer = (state, action) => {
+const CartReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TO_CART":
             let { product, quantity } = action.payload;
-            console.log(product);
+            console.log({ product, quantity });
             return {
                 ...state,
                 cart: [...state.cart, action.payload]
@@ -18,4 +18,4 @@ const cartReducer = (state, action) => {
     }
 }
 
-export default cartReducer;
+export default CartReducer;

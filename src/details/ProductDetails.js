@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { mugs } from '../constant/data';
 import { HiCheck } from "react-icons/hi2";
-import { useCartContext } from '../controller/cartContext';
+import { useCartContext } from '../controller/cartContext.js';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -27,16 +27,7 @@ const ProductDetails = () => {
     setQuantity(quantity + 1);
   };
 
-  // const handleAddToCart = () => {
-  //   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  //   const index = cart.findIndex((item) => item.id === detail.id);
-  //   if (index >= 0 ) {
-  //     cart[index].quantity += quantity;
-  //   } else {
-  //     cart.push({ ...detail, quantity });
-  //   }
-  //   localStorage.setItem('cart', JSON.stringify(cart));
-  // }
+
   const { addToCart } = useCartContext()
 
   
