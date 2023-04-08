@@ -1,6 +1,6 @@
 import React from 'react';
-import CoffeeImage from '../assets/images/coffee-img.png';
-import { coffee, coldBrew, sodas } from '../constant/data';
+import CoffeeImage from '../../assets/images/coffee-img.png';
+import { coffee, coldBrew, sodas } from '../../constant/data';
 
 const MenuCoffee = () => {
   return (

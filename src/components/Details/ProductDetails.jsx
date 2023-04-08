@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { mugs } from '../constant/data';
 import { HiCheck } from "react-icons/hi2";
-import { useCartContext } from '../controller/cartContext.js';
+import { useCartContext } from '../../controller/cartContext';
+import { mugs } from '../../constant/data';
+
 
 const ProductDetails = () => {
   const { id } = useParams();

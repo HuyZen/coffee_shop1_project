@@ -1,6 +1,5 @@
 import './App.css';
 import Home from '../src/container/Home'
-import ProductDetails from './details/ProductDetails';
 import { Route, Routes } from 'react-router-dom';
 import Header from './container/Header';
 import About from './container/About';
@@ -8,6 +7,7 @@ import Story from './container/Story';
 import Contact from './container/Contact';
 import Products from './container/Products';
 import Cart from './container/Cart';
+import ProductDetails from './components/Details/ProductDetails';
 
 
 function App() {

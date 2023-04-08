@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { mugs } from '../constant/data';
+import { mugs } from '../../constant/data';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

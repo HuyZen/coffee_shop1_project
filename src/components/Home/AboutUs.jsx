@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import coffeeStoryVideo from '../assets/videos/video.mp4';
+import coffeeStoryVideo from '../../assets/videos/video.mp4';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from 'react-router-dom';

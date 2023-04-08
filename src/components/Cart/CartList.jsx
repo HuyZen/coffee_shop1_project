@@ -6,12 +6,12 @@ import swal from 'sweetalert';
 
 
 export const CartList = () => {
-  const { cart, removeItem } = useCartContext();
+  const { cart, removeItem, clearALLItems } = useCartContext();
   const handleSuccess = () => {
     if (cart.length !== 0) {
       swal('Payment success!', "Thank you for purchasing our product", 'success');
       setTimeout(() => {
-        window.location.reload();
+        clearALLItems();
       }, 2000);
     }
   };
@@ -23,9 +23,6 @@ export const CartList = () => {
   const shippingFee = 5;
   const totalPrice = subTotalPrice + shippingFee;
 
-  const clearCart = () => {
-    window.location.reload();
-  }
 
   return (
     <div className="">
@@ -73,7 +70,7 @@ export const CartList = () => {
                 </button>
               </Link>
               <div className="col l-6 t-6 c-6 text-right">
-                <button onClick={() => clearCart()} className="uppercase bg-red-500 w-[40%] md:w-[50%] sm:w-full text-white font-medium text-lg sm:text-base h-[45px] rounded">
+                <button onClick={() => clearALLItems()} className="uppercase bg-red-500 w-[40%] md:w-[50%] sm:w-full text-white font-medium text-lg sm:text-base h-[45px] rounded">
                     Clear Cart
                 </button>
               </div>

@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
-import {AboutUs, CoffeeMagazine, FeatureMugs, LifestyleStories, Parallax} from '../components/Home'
-import MenuCoffee from '../components/MenuCoffee';
+import React from 'react';
+import {AboutUs, CoffeeMagazine, FeatureMugs, LifestyleStories, Parallax, MenuCoffee} from '../components/Home/index'
 import Slider from './Slider';
 import Footer from './Footer';
 
-function Home(props) {
+function Home() {
 
   return (
     <div>

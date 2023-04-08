@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import * as dataImg from '../constant/dataImg'
+import * as dataImg from '../../constant/dataImg'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
