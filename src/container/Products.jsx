@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Footer from './Footer';
+import { useAuth } from '../firebaseConfig';
 
 const Products = () => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
-
+  const currentUser = useAuth();
   return (
     <>
       <div className="my-[60px]">
@@ -37,9 +38,15 @@ const Products = () => {
                         {item.type === 'On Sale' ? (
                           <div className="absolute hz-tag__on-sale">{item.type}</div>
                         ) : null}
-                        <Link to={`/mug/${item.id}`}>
-                          <div className="absolute hz-button__buy-coffee">Explore Mug</div>
-                        </Link>
+                        {currentUser ? (
+                          <Link to={`/mug/${item.id}`}>
+                            <div className="absolute hz-button__buy-coffee">Explore Mug</div>
+                          </Link>
+                        ) : (
+                          <Link to="/sign-in">
+                            <div className="absolute hz-button__buy-coffee">Explore Mug</div>
+                          </Link>
+                        )}
                         <div className="hz-mug-decs">
                           <div className="hz-mug-name">{item.name}</div>
                           <div className="hz-mug-price">

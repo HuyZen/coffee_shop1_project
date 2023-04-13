@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import logo from '../assets/images/logo.png';
 import { Link, NavLink } from 'react-router-dom';
 import { useCartContext } from '../controller/cartContext';
+import { useAuth } from '../firebaseConfig';
 
 function Header(props) {
   let NavItem = [
@@ -12,11 +13,14 @@ function Header(props) {
     { name: 'Story', link: '/story' },
   ];
 
-  const { cart } = useCartContext()
+  const { cart } = useCartContext();
 
   const [check, setCheck] = useState('false');
 
   const [quantity, setQuantity] = useState('0');
+
+  const currentUser = useAuth();
+
   useEffect(() => {
     if (cart) {
       let total = 0;
@@ -30,8 +34,6 @@ function Header(props) {
   const handleShowMenu = (e) => {
     setCheck((current) => !current);
   };
-
-
 
   return (
     <header className="bg-bg-coffee top-0 left-0 right-0 shadow-md">
@@ -68,7 +70,9 @@ function Header(props) {
         >
           {NavItem.map((item) => (
             <li key={item.name} className="py-5 uppercase cursor-pointer text-white hover:text-rim">
-              <NavLink to={item.link} onClick={handleShowMenu}>{item.name}</NavLink>
+              <NavLink to={item.link} onClick={handleShowMenu}>
+                {item.name}
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -100,6 +104,24 @@ function Header(props) {
               <span className="mx-2 uppercase">Cart</span>
               <span className="hz-amount-circle bg-rim text-white">{quantity}</span>
             </NavLink>
+          </div>
+
+          <div className=" ml-6">
+            {currentUser ? (
+              <Link to="/user-profile">
+                <img
+                  className="w-8 h-8"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
+                  alt="profile"
+                />
+              </Link>
+            ) : (
+              <div className="hz-top-menu-item">
+                <NavLink to="/sign-in" className="flex items-center">
+                  <button>Sign In</button>
+                </NavLink>
+              </div>
+            )}
           </div>
         </div>
 
