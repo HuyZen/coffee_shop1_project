@@ -7,12 +7,12 @@ import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
   // Configure Firebase.
 const firebaseConfig = {
-    apiKey: "AIzaSyDCJjqsQXJx9bDkoupPOcDFSdzoh6QQv6Y",
-    authDomain: "hz-mugs-and-coffee.firebaseapp.com",
-    projectId: "hz-mugs-and-coffee",
-    storageBucket: "hz-mugs-and-coffee.appspot.com",
-    messagingSenderId: "768456164017",
-    appId: "1:768456164017:web:1387a531715a1712089890"
+    apiKey: "AIzaSyBFGxn6t8KryQTREnw9cbjCJmbF1ANJ1Sc",
+    authDomain: "hz-mugs-and-coffees.firebaseapp.com",
+    projectId: "hz-mugs-and-coffees",
+    storageBucket: "hz-mugs-and-coffees.appspot.com",
+    messagingSenderId: "807017692299",
+    appId: "1:807017692299:web:9c7baa006e10ac80a9e88e"
       // ...
   };
 
