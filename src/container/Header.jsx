@@ -118,7 +118,7 @@ function Header(props) {
             ) : (
               <div className="hz-top-menu-item">
                 <NavLink to="/sign-in" className="flex items-center">
-                  <button>Sign In</button>
+                  <button>SIGN IN</button>
                 </NavLink>
               </div>
             )}
