@@ -7,13 +7,12 @@ import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
   // Configure Firebase.
 const firebaseConfig = {
-    apiKey: "AIzaSyCJqOtsEX6Z8_xpuicqPlkd4JJ_WWhhOzU",
-    authDomain: "lagomcoffeeshop-bbd47.firebaseapp.com",
-    projectId: "lagomcoffeeshop-bbd47",
-    storageBucket: "lagomcoffeeshop-bbd47.appspot.com",
-    messagingSenderId: "834475513404",
-    appId: "1:834475513404:web:876cbb087a35a3d41a1539",
-    measurementId: "G-R5N89NCVNF"
+    apiKey: "AIzaSyDCJjqsQXJx9bDkoupPOcDFSdzoh6QQv6Y",
+    authDomain: "hz-mugs-and-coffee.firebaseapp.com",
+    projectId: "hz-mugs-and-coffee",
+    storageBucket: "hz-mugs-and-coffee.appspot.com",
+    messagingSenderId: "768456164017",
+    appId: "1:768456164017:web:1387a531715a1712089890"
       // ...
   };
 
