@@ -18,7 +18,7 @@ const SignUp = () => {
       await signup(email, password);
       toast.success('Đăng ký thành công');
       setTimeout(() => {
-        navigate('/sign-in');
+        navigate('/products');
       }, 2000);
     } catch (error) {
       switch (error.code) {

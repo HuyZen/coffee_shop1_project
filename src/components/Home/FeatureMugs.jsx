@@ -3,12 +3,14 @@ import { mugs } from '../../constant/data';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useAuth } from '../../firebaseConfig';
 
 const FeatureMugs = () => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
+  const currentUser = useAuth();
   return (
     <>
       <div
@@ -33,13 +35,15 @@ const FeatureMugs = () => {
                       <div className="absolute hz-tag__on-sale">{item.type}</div>
                     ) : null}
                     {/* <Link > */}
-                    <Link
-                      role="link"
-                      to={`/mug/${item.id}`}
-                      className="absolute hz-button__buy-coffee"
-                    >
-                      Explore mug
-                    </Link>
+                    {currentUser ? (
+                          <Link to={`/mug/${item.id}`}>
+                            <div className="absolute hz-button__buy-coffee">Explore Mug</div>
+                          </Link>
+                        ) : (
+                          <Link to="/sign-in">
+                            <div className="absolute hz-button__buy-coffee">Explore Mug</div>
+                          </Link>
+                        )}
                     {/* </Link> */}
                     <div className="hz-mug-decs">
                       <div className="hz-mug-name">{item.name}</div>
