@@ -37,8 +37,8 @@ const ProductDetails = () => {
     <>
       <div className="col l-10 l-o-1 t-12 c-12 mt-12">
         <div className="row">
-          <div className="col l-6">
-            <img src={detail?.img} alt={detail?.name} className="h-[500px] sld3:h-[350px] sld3:ml-4 hz-img__product" />
+          <div className="col l-6 c-10 c-o-1">
+            <img src={detail?.img} alt={detail?.name} className="h-[500px] sm:h-[350px] sld3:ml-4 hz-img__product" />
           </div>
 
           <div className="col l-6">

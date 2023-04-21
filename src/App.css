@@ -31,7 +31,7 @@ html {
 }
 
 .hz-subhead-line {
-  @apply flex flex-row justify-center items-center mt-[32px];
+  @apply flex flex-row justify-center items-center mt-[32px] sm:mt-0;
 }
 
 .hz-subhead-line_deco-line {

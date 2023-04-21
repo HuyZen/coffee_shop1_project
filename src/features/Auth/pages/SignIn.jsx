@@ -11,45 +11,44 @@ import { signin } from '../../../firebaseConfig';
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const handleSignIn = async () => {
-      setLoading(true)
-      try {
-          await signin(email, password);
-          toast.success('Đăng nhập thành công');
-          setTimeout(() => {
-              navigate('/products')
-          }, 1000)
-          const user = firebase.auth().currentUser;
-          if (user) {
-              user.getIdToken()
-                  .then(token => {
-                      // const encodedToken = btoa(token); // Mã hóa bằng Base64
-                      localStorage.setItem("token", token);
-                  })
-                  .catch(error => {
-                      console.log(error);
-                  });
-          }
-          
-      } catch (error) {
-          toast.error(error.message);
-      }
-      setLoading(false)
-  }
-
-  const uiConfig = {
-      signInFlow: "redirect",
-      signInSuccessUrl: "/products",
-      signInOptions: [
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      ],
-      tosUrl: '<your-tos-url>',
-      privacyPolicyUrl: "<your-url>",
-  };
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [loading, setLoading] = useState(false);
+  const handleSignIn = async () => {
+    setLoading(true);
+    try {
+      await signin(email, password);
+      toast.success('Đăng nhập thành công');
+      setTimeout(() => {
+        navigate('/products');
+      }, 1000);
+      const user = firebase.auth().currentUser;
+      if (user) {
+        user
+          .getIdToken()
+          .then((token) => {
+            // const encodedToken = btoa(token); // Mã hóa bằng Base64
+            localStorage.setItem('token', token);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+    setLoading(false);
+  };
+
+  const uiConfig = {
+    signInFlow: 'redirect',
+    signInSuccessUrl: '/products',
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    ],
+    tosUrl: '<your-tos-url>',
+    privacyPolicyUrl: '<your-url>',
+  };
   return (
     <div className="col l-4 l-o-4 mt-[60px] mb-10">
       <section class="bg-gray-50">
@@ -68,7 +67,7 @@ const SignIn = () => {
                     type="email"
                     name="email"
                     id="email"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#2563eb] focus:border-[#2563eb] block w-full p-2.5"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
                     placeholder="name@company.com"
                     required=""
                     value={email}
@@ -84,7 +83,7 @@ const SignIn = () => {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#2563eb] focus:border-[#2563eb] block w-full p-2.5"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
                     required=""
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -97,7 +96,7 @@ const SignIn = () => {
                         id="remember"
                         aria-describedby="remember"
                         type="checkbox"
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#93c5fd]"
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary"
                         required=""
                       />
                     </div>
@@ -107,7 +106,7 @@ const SignIn = () => {
                       </label>
                     </div>
                   </div>
-                  <a href="#forget" class="text-sm font-medium text-[#2563eb] hover:underline">
+                  <a href="#forget" class="text-sm font-medium text-primary hover:underline">
                     Forgot password?
                   </a>
                 </div>
@@ -115,13 +114,13 @@ const SignIn = () => {
                   disabled={loading}
                   onClick={handleSignIn}
                   type="submit"
-                  class="w-full text-white bg-[#2563eb] hover:bg-[#2563eb] focus:ring-4 focus:outline-none focus:ring-[#93c5fd] font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                  class="w-full text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 >
                   Sign in
                 </button>
-                <p class="text-sm font-light text-gray-500">
-                  Don’t have an account yet?{' '}
-                  <Link to="/sign-up" class="font-medium text-[#2563eb] hover:underline">
+                <p class=" font-light text-gray-500">
+                  <div className="text-sm mr-2 inline-block">Don’t have an account yet?</div>
+                  <Link to="/sign-up" class="font-medium text-primary hover:underline text-lg">
                     Sign up
                   </Link>
                 </p>
@@ -130,7 +129,7 @@ const SignIn = () => {
             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
           </div>
         </div>
-        <ToastContainer/>
+        <ToastContainer />
       </section>
     </div>
   );

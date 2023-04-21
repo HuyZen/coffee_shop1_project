@@ -21,6 +21,8 @@ function Header(props) {
 
   const currentUser = useAuth();
 
+  const imgProfile = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png'
+
   useEffect(() => {
     if (cart) {
       let total = 0;
@@ -69,12 +71,28 @@ function Header(props) {
           } lg:hidden absolute z-50 w-full h-full top-0 right-0 bottom-0 py-24 pl-4 text-center bg-primary duration-500 `}
         >
           {NavItem.map((item) => (
-            <li key={item.name} className="py-5 uppercase cursor-pointer text-white hover:text-rim">
+            <li
+              key={item.name}
+              className="py-5 uppercase cursor-pointer text-white hover:text-rim text-xl"
+            >
               <NavLink to={item.link} onClick={handleShowMenu}>
                 {item.name}
               </NavLink>
             </li>
           ))}
+          {currentUser ? (
+            <li className="mt-10 text-xl uppercase cursor-pointer text-white hover:text-rim flex flex-row justify-center">
+              <NavLink to="/user-profile" className="flex items-center" onClick={handleShowMenu}>
+                <button className=" bg-rim rounded-lg px-7 py-3 text-text-color">Profile</button>
+              </NavLink>
+            </li>
+          ) : (
+            <li className="mt-10 text-xl uppercase cursor-pointer text-white hover:text-rim flex flex-row justify-center">
+              <NavLink to="/sign-in" className="flex items-center" onClick={handleShowMenu}>
+                <button className=" bg-rim rounded-lg px-7 py-3 text-text-color">SIGN IN</button>
+              </NavLink>
+            </li>
+          )}
         </ul>
 
         {/* Cart */}
@@ -83,7 +101,27 @@ function Header(props) {
             check === true ? 'text-white hover:text-rim' : 'text-text-color'
           } font-medium z-20 `}
         >
-          <div className="hz-top-menu-item">
+          <div className=" mr-6">
+            {currentUser ? (
+              <Link to="/user-profile">
+                <img
+                  className="w-8 h-8 sm:w-5 sm:h-5 object-cover object-center rounded-full"
+                  src={currentUser.photoURL ? currentUser.photoURL : imgProfile}
+                  alt="profile"
+                />
+              </Link>
+            ) : (
+              <NavLink
+                to="/sign-in"
+                className="flex items-center text-gray-500 sm:hidden"
+                onClick={handleShowMenu}
+              >
+                <button className=" bg-rim rounded-lg px-7 py-2.5 ">SIGN IN</button>
+              </NavLink>
+            )}
+          </div>
+
+          <div className="hz-top-menu-item text-base text-gray-500 font-medium sm:text-xs">
             <NavLink to="/cart" className="flex items-center">
               <i>
                 <svg
@@ -104,24 +142,6 @@ function Header(props) {
               <span className="mx-2 uppercase">Cart</span>
               <span className="hz-amount-circle bg-rim text-white">{quantity}</span>
             </NavLink>
-          </div>
-
-          <div className=" ml-6">
-            {currentUser ? (
-              <Link to="/user-profile">
-                <img
-                  className="w-8 h-8"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
-                  alt="profile"
-                />
-              </Link>
-            ) : (
-              <div className="hz-top-menu-item">
-                <NavLink to="/sign-in" className="flex items-center">
-                  <button>SIGN IN</button>
-                </NavLink>
-              </div>
-            )}
           </div>
         </div>
 

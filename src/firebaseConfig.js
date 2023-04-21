@@ -1,24 +1,25 @@
 import firebase from 'firebase/compat/app';
 import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile} from 'firebase/auth';
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { useEffect, useState } from 'react';
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
   // Configure Firebase.
 const firebaseConfig = {
-    apiKey: "AIzaSyBFGxn6t8KryQTREnw9cbjCJmbF1ANJ1Sc",
-    authDomain: "hz-mugs-and-coffees.firebaseapp.com",
-    projectId: "hz-mugs-and-coffees",
-    storageBucket: "hz-mugs-and-coffees.appspot.com",
-    messagingSenderId: "807017692299",
-    appId: "1:807017692299:web:9c7baa006e10ac80a9e88e"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
       // ...
   };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = getAuth();
+
+// Custom hook
 export function useAuth() {
   const [currentUser, setCurrentUser] = useState();
   useEffect(() => {
@@ -36,9 +37,10 @@ export const signup=async(email,pass)=>{
 export const logout=async()=>{
   return signOut(auth);
 }
+
 // Change profile 
 const storage=getStorage();
-export const upload = async (file,currentUser,setLoading) =>{
+export async function upload (file,currentUser,setLoading) {
   const fileRef = ref(storage, currentUser.uid + '.png');
 
   setLoading(true);
@@ -48,6 +50,7 @@ export const upload = async (file,currentUser,setLoading) =>{
 
   updateProfile(currentUser, {photoURL});
   
-  // setLoading(false);
+  setLoading(false);
+  alert("Upload file success")
 }
 export { auth,storage };

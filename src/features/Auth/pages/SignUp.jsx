@@ -57,7 +57,7 @@ const SignUp = () => {
                     type="email"
                     name="email"
                     id="email"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#2563eb] focus:border-[#2563eb] block w-full p-2.5"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
                     placeholder="name@company.com"
                     required=""
                     value={email}
@@ -73,7 +73,7 @@ const SignUp = () => {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#2563eb] focus:border-[#2563eb] block w-full p-2.5"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
                     required=""
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -83,13 +83,13 @@ const SignUp = () => {
                   disabled={loading}
                   onClick={handleSignUp}
                   type="submit"
-                  class="w-full text-white bg-[#2563eb] hover:bg-[#2563eb] focus:ring-4 focus:outline-none focus:ring-[#93c5fd] font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                  class="w-full text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 >
                   Sign up
                 </button>
-                <p class="text-sm font-light text-gray-500">
-                  I have an account already{' '}
-                  <Link to="/sign-in" class="font-medium text-[#2563eb] hover:underline">
+                <p class=" font-light text-gray-500">
+                  <div className="text-sm mr-2 inline-block">I have an account already</div>
+                  <Link to="/sign-in" class="font-medium text-primary hover:underline text-lg">
                     Sign in
                   </Link>
                 </p>

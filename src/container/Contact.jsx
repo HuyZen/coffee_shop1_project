@@ -59,7 +59,7 @@ const Contact = () => {
             <div className="hz-subhead-line__label">CONTACT US</div>
             <div className="hz-subhead-line_deco-line w-9 h-[1px] bg-gray-300"></div>
           </div>
-          <div className="col l-8 l-o-2">
+          <div className="col l-8 l-o-2 sm:ml-4">
             <div className="row">
               <div className="text-left l-6" data-aos="fade-right">
                 <h3 className="pb-3 text-2xl font-semibold">Talk to me</h3>
@@ -181,7 +181,7 @@ const Contact = () => {
           <div className="hz-subhead-line__label">DIRECTORY</div>
           <div className="hz-subhead-line_deco-line w-9 h-[1px] bg-gray-300"></div>
         </div>
-        <div className="col l-8 l-o-2">
+        <div className="col l-8 l-o-2 t-8 t-o-2 c-8 c-o-2">
           <div className="row">
             <div className="col l-4">
               <h2 className="text-xs font-bold tracking-widest text-gray-500 ">PRESS</h2>

@@ -10,12 +10,12 @@ const Parallax = () => {
   }, []);
   return (
     <>
-        <div className="col l-12 t-12 c-12">
+        <div className="col l-12 t-12 c-12 sm:hidden">
             <div
               style={{
                 backgroundImage: `url(${dataImg.Parallax})`,
               }}
-              className="lg:h-[350px] h-[250px]  bg-cover bg-fixed bg-center w-[100vw] relative left-[calc(-50vw+50%)] mt-[40px]"
+              className="lg:h-[350px] h-[250px]  bg-cover bg-fixed bg-center w-[100vw] relative left-[calc(-50vw+50%)] mt-[40px] sm:mt-0"
             ></div>
         </div>
     </>
